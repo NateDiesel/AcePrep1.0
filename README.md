@@ -1,28 +1,25 @@
-
 # 🧠 AcePrep – AI-Powered Interview Cheat Sheet Generator
 
-AcePrep is a full-stack FastAPI application that helps job seekers prepare for interviews by generating tailored, AI-powered cheat sheets – complete with smart tips and a branded PDF export.
+AcePrep is your personal AI interview coach. Built with FastAPI and GPT integration, it analyzes your resume and job description to generate smart, tailored interview question packs — complete with a branded PDF export.
 
 ---
 
 ## 🚀 Features
 
-✅ Paste your resume + job description  
-✅ Get 15–20 tailored interview questions  
-✅ Includes “Smart Tips” for each question  
-✅ Branded PDF export  
+✅ Upload your **resume (PDF or DOCX)**  
+✅ Paste a **job title or LinkedIn/Indeed job link**  
+✅ Auto-detects resume-job mismatch  
+✅ Dynamically generates:
+- 15–20 role-specific interview questions
+- 5–10 crossover questions based on your resume
+- 3–5 questions to ask your interviewer (HR, Manager, or CEO)
+
+✅ GPT-powered using Together.ai  
+✅ PDF export with custom branding  
 ✅ Email delivery via SendGrid  
-✅ Mock Stripe checkout page  
-✅ Production-grade FastAPI backend  
-✅ Ready to deploy (Docker, Railway, etc.)
-
----
-
-## 📸 Screenshots (add yours!)
-- 🎯 `/` – Upload your resume and job details
-- 📄 `/generate` – View cheat sheet + tips
-- 💳 `/mock-checkout` – Simulated Stripe flow
-- 📨 PDF emailed upon generation
+✅ Clean Tailwind-based frontend UX  
+✅ Stripe-ready mock payment flow  
+✅ Built for real-world deployment (Railway, Docker)
 
 ---
 
@@ -30,38 +27,22 @@ AcePrep is a full-stack FastAPI application that helps job seekers prepare for i
 
 - Python 3.10+
 - FastAPI
-- Jinja2 templates
-- SendGrid API
-- Together.ai (LLM backend)
-- Stripe (mock integrated)
-- PDF generation with `reportlab`
-- Resume parsing: `pdfplumber`, `python-docx`
+- Jinja2 Templates
+- Tailwind CSS (via CDN)
+- Together.ai (LLM)
+- SendGrid (email delivery)
+- Stripe (mock integration)
+- PDF export with `reportlab`
+- Resume parsing via `pdfplumber` and `python-docx`
 
 ---
 
-## ⚙️ Setup Instructions
+## 📦 Setup Instructions (Local Dev)
 
 ```bash
-git clone https://github.com/NateDiesel/AcePrep.git
-cd AcePrep
-
+git clone https://github.com/NateDiesel/AcePrep1.0.git
+cd AcePrep1.0
 python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-
+source venv/bin/activate  # or venv\\Scripts\\activate on Windows
 pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8001
-```
-
----
-
-## 🌐 Live Demo
-
-> Coming soon via [Railway](https://railway.app/)
-
----
-
-## 📧 Want to try it?
-
-- Clone this repo
-- Paste your resume and job title
-- Get a tailored PDF emailed to you
+uvicorn app.main:app --reload --port 8000
